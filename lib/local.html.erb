@@ -1,0 +1,32 @@
+<html>
+<head>
+<style>
+body        { font-family: Helvetica, Arial; background: #CCF; }
+.box     { width: 960px; margin: auto; border: 1px solid #CCC; background: white;
+              -webkit-box-shadow: 0 0 10px #AAA;}
+.content { width: 600px;  padding: 10px; margin:auto;}
+.code { font-family: Courier; font-size: 11pt;}
+</style>
+</head>
+<body>
+  <div class="box">
+    <div class="content">
+      <h1>You seem to be developing with WebkitPdf locally</h1>
+      <p>In order to render pages correctly with <span class="code">wkhtmltopdf</span> your web server
+        needs to be able to spawn multiple running instances of this Rails app. If you're just using
+        <span class="code">script/server</span> this won't work. Please export the following
+        environment variable.
+
+        <p>Remember, don't set the URL to this one (
+        <span class="code">http://<%= @this_url %></span>) unless it's running on a server that spawns new
+        processes for requests.
+      </p>
+      <pre>export WEBKIT_PDF_DEVELOPMENT_URL=&lt;http://alternative/url&gt;</pre>
+      <p>e.g.</p>
+      <pre>export WEBKIT_PDF_DEVELOPMENT_URL=http://localhost:4000</pre>
+    </div>
+  </div>
+
+</body>
+</html>
+
